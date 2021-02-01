@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'xl-4$&o#zy510a7z9sx8fn!!xy%r-r
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['JunDev.pythonanywhere.com']
 
 
 # Application definition
@@ -135,3 +135,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
