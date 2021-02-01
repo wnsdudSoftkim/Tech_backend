@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'comment',
 ]
 # Activate Django-Heroku.
+import django_heroku
 django_heroku.settings(locals())
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
