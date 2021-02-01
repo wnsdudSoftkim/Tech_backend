@@ -23,11 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'xl-4$&o#zy510a7z9sx8fn!!xy%r-r=-ph*wsi@phj1t2)vp6!')
 
-
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
-
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
