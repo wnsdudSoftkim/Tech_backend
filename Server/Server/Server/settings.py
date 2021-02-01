@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'xl-4$&o#zy510a7z9sx8fn!!xy%r-r
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,22 +83,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Server.wsgi.application'
 
-import dj_database_url
-DATABASES = {
+
+DATABASES  = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangogirls',
-        'USER': 'name',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE'   : 'django.db.backends.mysql',
+        'NAME'     : 'mydb',
+        'USER'     : 'jun',
+        'PASSWORD' : 'tjdnftkfka0501',
+        'HOST'     : 'jun.co60jiy75jrv.ap-northeast-2.rds.amazonaws.com',
+        'OPTIONS': {'charset': 'utf8mb4'},
+        'PORT'     :'3306', 
     }
-}
-
-...
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+}	
 
 
 
@@ -139,4 +135,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
