@@ -58,8 +58,8 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 # CORS 관련 추가
-CORS_ORIGIN_WHITELIST = ['https://elated-jackson-48f942.netlify.app'] 
-CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = ['elated-jackson-48f942.netlify.app'] 
+CORS_ORIGIN_ALLOW_ALL = False
 
 
 REST_FRAMEWORK = {
